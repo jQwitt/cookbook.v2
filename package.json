@@ -1,0 +1,13 @@
+{
+  "name": "cookbook.v2",
+  "version": "1.0.0-alpha",
+  "description": "Iteration on cookbook, a tool of personal project recipes to eliminate boilerplate and reduce time to start developing ideas.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
