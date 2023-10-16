@@ -1,4 +1,4 @@
-import { clone } from "./helpers/index.js";
+import { clone } from "./helpers/fs.js";
 
 export function cook(obj) {
   const path = obj.template + "/" + obj.flavor;
