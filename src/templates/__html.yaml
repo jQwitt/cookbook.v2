@@ -1,0 +1,6 @@
+name: html
+prompts:
+  - styling:
+      prompt: "Please select your preferred method for styling"
+      options:
+        - tailwind-css
