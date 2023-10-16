@@ -4,6 +4,9 @@
   "description": "Iteration on cookbook, a tool of personal project recipes to eliminate boilerplate and reduce time to start developing ideas.",
   "main": "src/index.js",
   "type": "module",
+  "bin": {
+    "cook": "./src/index.js"
+  },
   "scripts": {
     "start": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
