@@ -1,3 +1,4 @@
-import { parse } from "./fs.js";
+import { parse, clone } from "./fs.js";
+import { formatChoices } from "./format.js";
 
-export { parse };
+export { parse, clone, formatChoices };
