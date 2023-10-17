@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node ./src/index.js",
     "clean": "node ./src/scripts/clean.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "keywords": [],
   "author": "",
@@ -23,5 +23,8 @@
     "gradient-string": "^2.0.2",
     "js-yaml": "^4.1.0",
     "rimraf": "^5.0.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
