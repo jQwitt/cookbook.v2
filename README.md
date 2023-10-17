@@ -4,11 +4,21 @@
 
 A CLI to quickly clone personal project recipes and eliminate boilerplate - reducing time to deployment.
 
-### Current Recipes
+### Supported Recipes
+
+##### Client
 
 - **html**
   - _default_ - local css stylesheet
   - _tailwind-css_ - tailwind css CDN
+- **htmx**
+  - _quick_ - tailwind / postcss, typescript with hot reload, KOA backend, prisma integrated
+
+##### Server
+
+- **express**
+  - _default_ - basic JS express server
+  - _typescript_ - typescript enabled express server with hot reload
 
 ### Usage
 
