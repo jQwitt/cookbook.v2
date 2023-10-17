@@ -2,6 +2,12 @@ export function greetingEnabled() {
   return !process.argv.slice(2).includes("--no-greeting");
 }
 
+export function devEnabled() {
+  const args = process.argv.slice(2);
+
+  return args.includes("--dev") || args.includes("-d");
+}
+
 export function getNameFromFlag() {
   const candidateFlags = process.argv
     .slice(2)

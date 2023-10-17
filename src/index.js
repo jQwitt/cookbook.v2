@@ -21,7 +21,7 @@ try {
     });
   }
   const recipe = { name };
-  console.log(`Cooking up some ${passion(name)}\n`);
+  info(`Cooking up some ${passion(name)}\n`);
 
   const selectedTemplate = await select({
     message: "What template would you like to use?",
@@ -45,8 +45,7 @@ try {
     }).then((selection) => (recipe[key] = selection));
   }
 
-  cook(recipe);
+  if (isDev) cook(recipe);
 } catch (e) {
-  console.log(e);
   info("\n" + passion("bye!"));
 }

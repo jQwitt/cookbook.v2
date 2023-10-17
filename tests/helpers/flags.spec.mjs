@@ -19,6 +19,24 @@ describe("flags.js", () => {
     });
   });
 
+  describe("devEnabled", () => {
+    it("returns false by default", () => {
+      expect(flags.devEnabled()).toBe(false);
+    });
+
+    it("returns true when --dev is present", () => {
+      process.argv = ["", "", "--dev"];
+
+      expect(flags.devEnabled()).toBe(true);
+    });
+
+    it("returns true when -d is present", () => {
+      process.argv = ["", "", "-d"];
+
+      expect(flags.devEnabled()).toBe(true);
+    });
+  });
+
   describe("getNameFromFlag", () => {
     it("returns null by default", () => {
       expect(flags.getNameFromFlag()).toBe(null);
