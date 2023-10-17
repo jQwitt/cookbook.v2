@@ -1,8 +1,8 @@
 import * as yaml from "js-yaml";
-import fse from "fs-extra";
-import fs from "fs";
+import fs from "fs-extra";
+import path from "path";
 
-const CURRENT_PATH = "/Volumes/SSD/projects/cookbook.v2/src/";
+const CURRENT_PATH = getDirname();
 
 export function parse() {
   const result = {};
@@ -22,11 +22,18 @@ export function parse() {
   return result;
 }
 
-export function clone(path) {
+export function clone(template, name) {
   try {
-    fse.copy(CURRENT_PATH + "templates/" + path, CURRENT_PATH + "../output");
+    fs.copySync(
+      `${CURRENT_PATH}src/templates/${template}`,
+      `${CURRENT_PATH}../output/${name}`
+    );
     console.log("project created in /output");
   } catch (e) {
     console.log(e);
   }
+}
+
+export function getDirname() {
+  return "/" + import.meta.url.split("file:///")[1].split("src")[0];
 }

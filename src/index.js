@@ -19,14 +19,17 @@ let name = getNameFromFlag();
 if (!name) {
   name = await input({
     message: "What would you like to name your project?",
+    validate: (str) => str.length > 0,
   });
 }
+const recipe = { name };
 console.log(`Cooking up some ${chalk.bold(gradient.passion(name))}\n`);
 
 const selectedTemplate = await select({
   message: "What template would you like to use?",
   choices: formatChoices(Object.keys(cookbook)),
 });
+recipe.template = selectedTemplate;
 
 const prompts = cookbook[selectedTemplate].map(({ key, message, options }) => ({
   key,
@@ -34,7 +37,6 @@ const prompts = cookbook[selectedTemplate].map(({ key, message, options }) => ({
   choices: formatChoices(options),
 }));
 
-const recipe = { template: selectedTemplate };
 for (const { key, message, choices } of prompts) {
   await select({
     message,
