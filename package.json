@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node ./src/index.js",
     "clean": "node ./src/scripts/clean.js",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "prep": "npm i -g ."
   },
   "keywords": [],
   "author": "",

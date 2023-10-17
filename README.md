@@ -20,6 +20,22 @@ cook
 
 ```
 
+To install for global usage on unix systems:
+
+```bash
+# add to you ~/.zshrc
+alias prep-kitchen="unalias cook && cd /Volumes/SSD/projects/cookbook.v2 && nvm use && pnpm prep && cd ~"
+
+# open new terminal shell
+prep-kitchen && cook
+```
+
+Occasionally repetitive runs of this command may cause issues, which can be solved by unaliasing `cook`:
+
+```bash
+unalias cook
+```
+
 ### Dev Setup
 
 Built using `nvm` and `pnpm`. To develop locally:
