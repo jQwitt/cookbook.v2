@@ -1,0 +1,7 @@
+name: "htmx"
+schema: "1.0"
+prompts:
+  - key: "flavor"
+    message: "Please select your preferred flavor"
+    options:
+      - "quick (tailwind-css, typescript, prisma, KOA backend)"
