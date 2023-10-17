@@ -3,6 +3,8 @@ import fs from "fs-extra";
 import chalk from "chalk";
 
 import { passion } from "./log.js";
+import { rimraf } from "rimraf";
+import { rimrafSync } from "rimraf";
 
 const CURRENT_PATH = getDirname();
 
@@ -31,6 +33,7 @@ export function clone(template, name) {
   const SRC = `${CURRENT_PATH}src/templates/${template}`;
   const OUT = `${CURRENT_PATH}output/${name}`;
   try {
+    rimrafSync(OUT);
     fs.copySync(SRC, OUT);
     console.log(
       `\ncloned ${chalk.blue(template)} into in ${chalk.yellow(
