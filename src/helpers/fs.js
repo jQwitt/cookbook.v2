@@ -1,6 +1,8 @@
 import * as yaml from "js-yaml";
 import fs from "fs-extra";
-import path from "path";
+import chalk from "chalk";
+
+import { passion } from "./log.js";
 
 const CURRENT_PATH = getDirname();
 
@@ -26,9 +28,13 @@ export function clone(template, name) {
   try {
     fs.copySync(
       `${CURRENT_PATH}src/templates/${template}`,
-      `${CURRENT_PATH}../output/${name}`
+      `${CURRENT_PATH}output/${name}`
     );
-    console.log("project created in /output");
+    console.log(
+      `\ncloned ${chalk.blue(template)} into in ${chalk.yellow(
+        CURRENT_PATH + "output/"
+      )}${passion(name)}`
+    );
   } catch (e) {
     console.log(e);
   }
