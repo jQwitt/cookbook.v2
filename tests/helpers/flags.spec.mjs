@@ -17,6 +17,12 @@ describe("flags.js", () => {
 
       expect(flags.greetingEnabled()).toBe(false);
     });
+
+    it("returns false when -ng is present", () => {
+      process.argv = ["", "", "-ng"];
+
+      expect(flags.greetingEnabled()).toBe(false);
+    });
   });
 
   describe("devEnabled", () => {

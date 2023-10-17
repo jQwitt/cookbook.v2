@@ -1,4 +1,3 @@
-import gradient from "gradient-string";
 import * as log from "../../src/helpers/log.js";
 
 describe("log.js", () => {
@@ -8,6 +7,10 @@ describe("log.js", () => {
 
   it("logs info", () => {
     expect(log.info("test")).not.toBe(null);
+  });
+
+  it("logs dev", () => {
+    expect(log.dev("test")).not.toBe(null);
   });
 
   describe("style presets", () => {

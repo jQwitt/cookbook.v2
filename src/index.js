@@ -3,13 +3,14 @@ import { input, select } from "@inquirer/prompts";
 
 import { parse } from "./helpers/fs.js";
 import { formatChoices } from "./helpers/format.js";
-import { info, greet, passion } from "./helpers/log.js";
+import { dev, info, greet, passion } from "./helpers/log.js";
 import { greetingEnabled, getNameFromFlag } from "./helpers/flags.js";
 
 import { cook } from "./cook.js";
 
 try {
   const cookbook = parse();
+  dev(cookbook);
 
   if (greetingEnabled()) greet();
 
@@ -45,7 +46,10 @@ try {
     }).then((selection) => (recipe[key] = selection));
   }
 
-  if (isDev) cook(recipe);
+  dev(recipe);
+
+  cook(recipe);
 } catch (e) {
+  dev(e);
   info("\n" + passion("bye!"));
 }

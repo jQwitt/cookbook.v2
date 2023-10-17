@@ -26,7 +26,8 @@ A CLI to quickly clone personal project recipes and eliminate boilerplate - redu
 cook
 
   --name="{PROJECT NAME}"     # optional, bypasses first prompt for project name
-  --no-greeting               # optional, skips greeting text
+  --no-greeting, -ng          # optional, skips greeting text
+  --dev, -d                   # optional, development / debug logging
 
 ```
 

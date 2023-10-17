@@ -1,5 +1,7 @@
 export function greetingEnabled() {
-  return !process.argv.slice(2).includes("--no-greeting");
+  const args = process.argv.slice(2);
+
+  return !args.includes("--no-greeting") && !args.includes("-ng");
 }
 
 export function devEnabled() {
