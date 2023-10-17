@@ -6,3 +6,5 @@ prompts:
     options:
       - "default"
       - "typescript"
+postInstall:
+  - "pnpm i"

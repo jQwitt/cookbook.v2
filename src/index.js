@@ -28,8 +28,9 @@ try {
     choices: formatChoices(Object.keys(cookbook)),
   });
   recipe.template = selectedTemplate;
+  recipe.postInstall = cookbook[selectedTemplate].postInstall;
 
-  const prompts = cookbook[selectedTemplate].map(
+  const prompts = cookbook[selectedTemplate].prompts.map(
     ({ key, message, options }) => ({
       key,
       message,
@@ -46,5 +47,6 @@ try {
 
   cook(recipe);
 } catch (e) {
+  console.log(e);
   info("\n" + passion("bye!"));
 }

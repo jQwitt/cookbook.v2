@@ -16,8 +16,9 @@ export function parse() {
       const template = yaml.load(
         fs.readFileSync(`${CURRENT_PATH}src/configs/${id}`)
       );
+      const { postInstall, prompts } = template;
 
-      result[template.name] = template.prompts;
+      result[template.name] = { postInstall, prompts };
     });
   } catch (e) {
     console.log(e);
@@ -27,19 +28,20 @@ export function parse() {
 }
 
 export function clone(template, name) {
+  const SRC = `${CURRENT_PATH}src/templates/${template}`;
+  const OUT = `${CURRENT_PATH}output/${name}`;
   try {
-    fs.copySync(
-      `${CURRENT_PATH}src/templates/${template}`,
-      `${CURRENT_PATH}output/${name}`
-    );
+    fs.copySync(SRC, OUT);
     console.log(
       `\ncloned ${chalk.blue(template)} into in ${chalk.yellow(
         CURRENT_PATH + "output/"
       )}${passion(name)}`
     );
+    return OUT;
   } catch (e) {
     console.log(e);
   }
+  return null;
 }
 
 export function getDirname() {
