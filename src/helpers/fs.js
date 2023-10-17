@@ -10,10 +10,12 @@ export function parse() {
   const result = {};
 
   try {
-    const templates = fs.readdirSync("src/configs");
+    const templates = fs.readdirSync(`${CURRENT_PATH}src/configs`);
 
     templates.map((id) => {
-      const template = yaml.load(fs.readFileSync(`src/configs/${id}`));
+      const template = yaml.load(
+        fs.readFileSync(`${CURRENT_PATH}src/configs/${id}`)
+      );
 
       result[template.name] = template.prompts;
     });
