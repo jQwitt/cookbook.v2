@@ -1,6 +1,8 @@
 # cookbook.v2
 
-Iteration on cookbook, a tool of personal project recipes to eliminate boilerplate and reduce time to start developing ideas.
+<img width="544" alt="cookbook" src="https://github.com/jQwitt/cookbook.v2/assets/10406506/5ace7ff4-c0ed-4451-b6b7-12b45d5fd294">
+
+A CLI to quickly clone personal project recipes and eliminate boilerplate - reducing time to deployment.
 
 ### Current Recipes
 
