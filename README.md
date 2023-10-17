@@ -30,4 +30,10 @@ nvm use && pnpm
 pnpm start # run entry script locally
 ```
 
+Tests and coverage supplied by jest:
+
+```bash
+nvm use && pnpm test
+```
+
 Production build + global install controls coming soon!
